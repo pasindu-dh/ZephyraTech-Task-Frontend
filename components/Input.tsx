@@ -35,7 +35,7 @@ const Input: React.FC<InputProps> = ({
             ${Icon ? 'pl-11' : 'pl-6'} 
             ${isPassword ? 'pr-12' : 'pr-6'}
             focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary
-            transition-all duration-200 placeholder:text-gray-400 text-sm
+            transition-all duration-200 placeholder:text-gray-400 text-sm text-gray-900
           `}
           {...props}
         />

@@ -1,21 +1,33 @@
 "use client";
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import OnboardingIllustration from "@/components/OnboardingIllustration";
 import Progress from "@/components/Progress";
 import SocialLoginBlock from "@/components/SocialLoginBlock";
 import { useRouter } from 'next/navigation';
 import AuthService from "@/services/auth.service";
 import Link from "next/link";
+import { Loader2 } from 'lucide-react';
 
 export default function Home() {
   const router = useRouter();
+  const [isChecking, setIsChecking] = useState(true);
 
   useEffect(() => {
     if (AuthService.getCurrentUser()) {
       router.push('/dashboard');
+    } else {
+      setIsChecking(false);
     }
   }, [router]);
+
+  if (isChecking) {
+    return (
+      <main className="min-h-screen flex flex-col items-center justify-center bg-[#F7F7F7]">
+        <Loader2 className="animate-spin text-primary" size={32} />
+      </main>
+    );
+  }
 
   return (
     <main className="min-h-screen flex flex-col md:flex-row bg-[#F7F7F7]">
