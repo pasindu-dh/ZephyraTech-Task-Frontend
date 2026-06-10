@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
-import { User } from 'lucide-react';
+import { User, Mail } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 
 const GoogleIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -18,6 +19,8 @@ const AppleIcon = () => (
 );
 
 const SocialLoginBlock = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-col gap-3 w-full max-w-sm mx-auto">
       <Button variant="outline">
@@ -27,6 +30,10 @@ const SocialLoginBlock = () => {
       <Button variant="apple">
         <AppleIcon />
         <span>Continue with Apple</span>
+      </Button>
+      <Button variant="outline" onClick={() => router.push('/signup')}>
+        <Mail size={18} />
+        <span>Continue with Email</span>
       </Button>
       <Button variant="guest">
         <User size={18} />
