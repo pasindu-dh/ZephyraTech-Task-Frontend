@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth/";
+const API_URL = "https://zephyratech-task-backend.onrender.com/api/auth/";
 
 class AuthService {
   login(email: string, password: string): Promise<any> {
