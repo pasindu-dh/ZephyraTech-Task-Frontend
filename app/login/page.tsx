@@ -1,18 +1,42 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import Divider from "@/components/Divider";
 import SocialLoginBlock from "@/components/SocialLoginBlock";
 import OnboardingIllustration from "@/components/OnboardingIllustration";
-import { Mail, Lock } from 'lucide-react';
+import { Mail, Lock, Loader2 } from 'lucide-react';
 import Link from 'next/link';
+import AuthService from "@/services/auth.service";
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
-  const handleSubmit = (e: React.FormEvent) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Logic for login will go here
+    setMessage("");
+    setLoading(true);
+
+    try {
+      await AuthService.login(email, password);
+      router.push("/");
+    } catch (error: any) {
+      const resMessage =
+        (error.response &&
+          error.response.data &&
+          error.response.data.message) ||
+        error.message ||
+        error.toString();
+
+      setMessage(resMessage);
+      setLoading(false);
+    }
   };
 
   return (
@@ -36,21 +60,33 @@ export default function LoginPage() {
               placeholder="Email" 
               type="email" 
               icon={Mail} 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
             />
             <Input 
               placeholder="Password" 
               type="password" 
               icon={Lock} 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
             />
             
+            {message && (
+              <div className="text-red-500 text-xs text-center px-2">
+                {message}
+              </div>
+            )}
+
             <div className="flex justify-center -mt-2">
               <Button variant="ghost" type="button" className="text-xs">
                 Forgot Password?
               </Button>
             </div>
             
-            <Button variant="primary" type="submit">
-              Login
+            <Button variant="primary" type="submit" disabled={loading}>
+              {loading ? <Loader2 className="animate-spin" size={20} /> : "Login"}
             </Button>
           </form>
           
