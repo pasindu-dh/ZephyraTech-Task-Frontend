@@ -2,6 +2,8 @@
 
 A modern, responsive coaching platform frontend built with Next.js and Tailwind CSS, strictly following the provided UI/UX design.
 
+**Live Demo**: [zephyra-tech-task-frontend-etac-7x7oqt303.vercel.app](https://zephyra-tech-task-frontend-etac-7x7oqt303.vercel.app)
+
 ## 🚀 Features
 
 - **Responsive Design**: Mobile-first approach with a professional "Split Layout" for desktop screens.
