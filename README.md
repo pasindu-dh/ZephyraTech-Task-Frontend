@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ZephyraTech Frontend
 
-## Getting Started
+A modern, responsive coaching platform frontend built with Next.js and Tailwind CSS, strictly following the provided UI/UX design.
 
-First, run the development server:
+## 🚀 Features
+
+- **Responsive Design**: Mobile-first approach with a professional "Split Layout" for desktop screens.
+- **Onboarding Page**: Interactive introduction with progress tracking and multiple social login options.
+- **Login Page**: Secure login form with email/password inputs and social authentication integration.
+- **Custom Components**: 
+  - Reusable `Button` with multiple variants (Primary, Apple, Google, Guest).
+  - Robust `Input` fields with icons and password visibility toggles.
+  - Custom SVG illustrations and progress indicators.
+- **Tech Stack**:
+  - [Next.js](https://nextjs.org/) (App Router)
+  - [TypeScript](https://www.typescriptlang.org/)
+  - [Tailwind CSS v4](https://tailwindcss.com/)
+  - [Lucide React](https://lucide.dev/) (Icons)
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm or yarn
+
+### Installation
+
+1. Clone the repository (if applicable).
+2. Navigate to the `frontend` directory:
+   ```bash
+   cd frontend
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Development
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create an optimized production build:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🎨 Design Reference
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The UI was implemented to strictly match `The Design.jpeg`, ensuring pixel-perfect alignment, typography, and color consistency.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is part of an academic task for Semester 04 - ZephyraTech.
