@@ -25,7 +25,7 @@ export default function LoginPage() {
 
     try {
       await AuthService.login(email, password);
-      router.push("/");
+      router.push("/dashboard");
     } catch (error: any) {
       const resMessage =
         (error.response &&
