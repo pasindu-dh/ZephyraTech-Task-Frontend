@@ -1,10 +1,22 @@
+"use client";
+
+import React, { useEffect } from 'react';
 import OnboardingIllustration from "@/components/OnboardingIllustration";
 import Progress from "@/components/Progress";
 import SocialLoginBlock from "@/components/SocialLoginBlock";
-import Button from "@/components/Button";
+import { useRouter } from 'next/navigation';
+import AuthService from "@/services/auth.service";
 import Link from "next/link";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (AuthService.getCurrentUser()) {
+      router.push('/dashboard');
+    }
+  }, [router]);
+
   return (
     <main className="min-h-screen flex flex-col md:flex-row bg-[#F7F7F7]">
       {/* Left side / Top side (Illustration) */}

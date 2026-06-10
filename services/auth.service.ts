@@ -3,7 +3,7 @@ import axios from "axios";
 const API_URL = "http://localhost:8080/api/auth/";
 
 class AuthService {
-  login(email, password) {
+  login(email: string, password: string): Promise<any> {
     return axios
       .post(API_URL + "signin", {
         email,
@@ -18,19 +18,20 @@ class AuthService {
       });
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem("user");
   }
 
-  register(email, password) {
+  register(email: string, password: string): Promise<any> {
     return axios.post(API_URL + "signup", {
       email,
       password,
     });
   }
 
-  getCurrentUser() {
-    return JSON.parse(localStorage.getItem("user"));
+  getCurrentUser(): any {
+    const user = typeof window !== 'undefined' ? localStorage.getItem("user") : null;
+    return user ? JSON.parse(user) : null;
   }
 }
 
