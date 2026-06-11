@@ -9,7 +9,7 @@ const OnboardingIllustration = () => {
         alt="Success Illustration" 
         width={400} 
         height={400} 
-        className="w-full h-auto max-w-xs md:max-w-md object-contain drop-shadow-md" 
+        className="w-full h-auto max-w-xs md:max-w-md object-contain" 
         priority 
       />
     </div>

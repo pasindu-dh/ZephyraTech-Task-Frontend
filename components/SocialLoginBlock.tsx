@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Button from './Button';
-import { User, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
 const GoogleIcon = () => (
@@ -33,13 +33,9 @@ const SocialLoginBlock = () => {
         <AppleIcon />
         <span>Continue with Apple</span>
       </Button>
-      <Button variant="outline" onClick={() => router.push('/signup')}>
+      <Button variant="guest" onClick={() => router.push('/signup')}>
         <Mail size={18} />
         <span>Continue with Email</span>
-      </Button>
-      <Button variant="guest">
-        <User size={18} />
-        <span>Continue As Guest</span>
       </Button>
     </div>
   );

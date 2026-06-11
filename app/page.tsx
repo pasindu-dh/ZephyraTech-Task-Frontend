@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col md:flex-row bg-[#F7F7F7]">
       {/* Left side / Top side (Illustration) */}
-      <div className="flex-1 flex items-center justify-center p-6 md:bg-white md:border-r md:border-gray-100">
+      <div className="flex-1 flex items-center justify-center p-6 bg-white md:border-r md:border-gray-100">
         <OnboardingIllustration />
       </div>
 
